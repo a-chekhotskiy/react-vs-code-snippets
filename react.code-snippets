@@ -1,0 +1,24 @@
+{
+    "Create custom react function component": {
+        "prefix": ["tsc"],
+        "body": [
+            "import { classNames } from 'helpers/classNames';",
+            "import cls from './${TM_FILENAME_BASE}.module.scss';",
+            "",
+            "interface ${TM_FILENAME_BASE}Props {",
+            "\tclassName?: string;",
+            "}",
+            "",
+            "export const ${TM_FILENAME_BASE}: React.FC<${TM_FILENAME_BASE}Props> = (props) => {",
+            "\tconst { className } = props;",
+            "",
+            "\treturn (",
+            "\t\t<div className={classNames(cls.${TM_FILENAME_BASE/(^.)/${1:/downcase}/}, {}, [className])}>",
+            "\t\t\t$0",
+            "\t\t</div>",
+            " );",
+            "}"
+        ],
+        "description": "Create custom react function component. It names component as a file name and imports scss module and classnames for working with classes"
+    }
+}
